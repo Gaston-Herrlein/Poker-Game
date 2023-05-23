@@ -2,7 +2,7 @@ package com.Cartas;
 import java.util.List;
 import java.util.ArrayList;
 public class Mesa extends Cartas{
-    List <Cartas> mesa = new ArrayList<>();
+    List <Cartas> mesa = new ArrayList<>(); //
 
     public Mesa(){
     }

@@ -1,20 +1,27 @@
 import com.Cartas.Mano;
 import com.Cartas.Mesa;
+import com.Jugadores.Boot1;
+import com.Jugadores.Jugador;
 
 public class Main {
     public static void main(String[] args) {
-        Mano unaMano = new Mano();
-        Mano dosMano = new Mano();
-        Mano tresMano = new Mano();
-        Mesa unaMesa = new Mesa();
-        
-        System.out.println(unaMano.toString());
-        System.out.println("\n");
-        System.out.println(dosMano.toString());
-        System.out.println("\n");
-        System.out.println(tresMano.toString());
-        System.out.println("\n");
+        Boot1 Steve = new Boot1("Steve Jhonson");
+        Jugador Yo = new Jugador ("Gaston Herrlein el mas mejor");
+        Mesa mesa = new Mesa();
 
-        System.out.println(unaMesa.Flop());
+        Steve.setCiegaGrande();
+        Yo.setDiller();
+        Yo.setCiegaChica();
+
+        System.out.println(Yo.toString());
+        System.out.println("ESTO NO SE HACE PERO BUENO TE MUESTRO LAS CARTAS DEL BOOT: \n" + Steve.toString());
+
+        Yo.Jugar();
+        Steve.Jugar();
+
+        Yo.Jugar(false);
+        Steve.Jugar(false);
+
+       System.out.println(mesa.Flop());
     }
 }

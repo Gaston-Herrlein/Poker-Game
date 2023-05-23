@@ -18,11 +18,22 @@ public class Mano extends Cartas{
             }
         }
     }
-
+    public int getValorCarta1 (){
+        return mano.get(0).getValor();
+    }
+    public int getValorCarta2 (){
+        return mano.get(1).getValor();
+    }
+    public String getPaloCarta1 (){
+        return mano.get(0).getPalo();
+    }
+    public String getPaloCarta2 (){
+        return mano.get(1).getPalo();
+    }
     @Override
     public String toString() {
         return "Cartas de la mano: \n" +
                 super.VerificarValor(mano.get(0).getValor()) + " " + mano.get(0).getPalo() + "\n" +
-                super.VerificarValor(mano.get(1).getValor()) + " " + mano.get(1).getPalo();
+                super.VerificarValor(mano.get(1).getValor()) + " " + mano.get(1).getPalo() + "\n\n";
     }
 }
