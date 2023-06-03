@@ -1,12 +1,12 @@
 package com.Jugadores;
-import com.Cartas.Mano;
+import com.Cartas.Hand;
 import java.util.Scanner;
 
 public class Jugador extends Apuestas implements Jugadores {
     String nombre;
     int fichas;
     int apuesta;
-    Mano mano;
+    Hand hand;
     boolean diller=false;
     boolean ciegaChica=false;
     boolean ciegaGrande=false;
@@ -14,7 +14,7 @@ public class Jugador extends Apuestas implements Jugadores {
     public Jugador (String nombre){
         this.nombre=nombre;
         this.fichas=this.fichasInicial;
-        this.mano = new Mano();
+        this.hand = new Hand();
         this.cantJugadores++;
     }
     public void setDiller(){
@@ -38,7 +38,7 @@ public class Jugador extends Apuestas implements Jugadores {
     @Override
     public String toString (){
         return this.nombre + ", " + this.fichas + "\n" +
-                this.mano.toString();
+                this.hand.toString();
     }
     @Override
     public void Jugar (){

@@ -1,9 +1,9 @@
 package com.Jugadores;
-import com.Cartas.Mano;
+import com.Cartas.Hand;
 
 public class Boot1 extends Apuestas implements Jugadores {
     String nombre;
-    Mano mano;
+    Hand hand;
     int fichas;
     int apuesta;
 
@@ -14,7 +14,7 @@ public class Boot1 extends Apuestas implements Jugadores {
     public Boot1(String nombre){
         this.nombre=nombre;
         this.fichas=this.fichasInicial;
-        this.mano = new Mano ();
+        this.hand = new Hand();
         this.cantJugadores++;
     }
 
@@ -38,7 +38,7 @@ public class Boot1 extends Apuestas implements Jugadores {
     }
     public String toString (){
         return this.nombre + ", " + this.fichas + "\n" +
-                this.mano.toString();
+                this.hand.toString();
     }
     @Override
     public void Jugar(){
@@ -70,7 +70,7 @@ public class Boot1 extends Apuestas implements Jugadores {
     }
     @Override
     public void Jugar(boolean apuesta, int cantidad) {
-        if (mano.getValorCarta1()==mano.getValorCarta2()) {
+        if (hand.getValorCarta1()== hand.getValorCarta2()) {
 
         }
     }

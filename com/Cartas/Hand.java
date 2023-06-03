@@ -1,17 +1,17 @@
 package com.Cartas;
 import java.util.List;
 import java.util.ArrayList;
-public class Mano extends Cartas{
-    List <Cartas> mano = new ArrayList<>();
+public class Hand extends Cards {
+    List <Cards> mano = new ArrayList<>();
 
-    public Mano(){
+    public Hand(){
         for (int i=0; i<2; i++){
             int valorCarta = (int) (Math.random()*13+1); //Obtenemos un valor entre 1 y 13
             int valorPalo = (int) (Math.random()*4);
 
             if(!ExisteLaCarta(valorCarta, this.palos[valorPalo])){
-                mano.add(new Cartas(valorCarta, this.palos[valorPalo]));
-                cartasEnJuego.add(new Cartas(valorCarta, this.palos[valorPalo]));
+                mano.add(new Cards(valorCarta, this.palos[valorPalo]));
+                cartasEnJuego.add(new Cards(valorCarta, this.palos[valorPalo]));
             }
             else{
                 i--;

@@ -2,15 +2,15 @@ package com.Cartas;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cartas implements Mazo{
+public class Cards implements Deck {
     private int valor;
     private String palo;
-    static List<Cartas> cartasEnJuego = new ArrayList<>();
+    static List<Cards> cartasEnJuego = new ArrayList<>();
 
-    public Cartas() {
+    public Cards() {
     }
 
-    public Cartas(int valor, String palo) {
+    public Cards(int valor, String palo) {
         this.valor = valor;
         this.palo = palo;
     }
@@ -25,7 +25,7 @@ public class Cartas implements Mazo{
 
     @Override
     public boolean ExisteLaCarta(int valor, String palo) {
-        for (Cartas carta : cartasEnJuego){
+        for (Cards carta : cartasEnJuego){
             if ((carta.getValor() == valor) && (carta.getPalo().equals(palo))) return true;
         }
         return false;
