@@ -4,7 +4,7 @@ import com.Observer;
 import java.util.List;
 import java.util.ArrayList;
 public class Table extends Cards implements Observer {
-    List <Cards> table = new ArrayList<>(); //
+    List <Cards> table = new ArrayList<>();
     static boolean flagFlop=false;
     static boolean flagTurn=false;
     static boolean flagRiver=false;

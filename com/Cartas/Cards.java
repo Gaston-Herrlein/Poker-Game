@@ -3,19 +3,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cards implements Deck {
-    private int valor;
+    private Integer valor;
     private String palo;
     static List<Cards> cartasEnJuego = new ArrayList<>();
 
     public Cards() {
     }
 
-    public Cards(int valor, String palo) {
+    public Cards(Integer valor, String palo) {
         this.valor = valor;
         this.palo = palo;
     }
 
-    int getValor() {
+    Integer getValor() {
         return this.valor;
     }
 
@@ -24,7 +24,7 @@ public class Cards implements Deck {
     }
 
     @Override
-    public boolean ExisteLaCarta(int valor, String palo) {
+    public boolean ExisteLaCarta(Integer valor, String palo) {
         for (Cards carta : cartasEnJuego){
             if ((carta.getValor() == valor) && (carta.getPalo().equals(palo))) return true;
         }
@@ -32,7 +32,7 @@ public class Cards implements Deck {
     }
 
     @Override
-    public String VerificarValor(int valor) {
+    public String VerificarValor(Integer valor) {
         String[] valorLetra = {"A", "J", "Q", "K"};
 
         if (valor==1){

@@ -2,7 +2,7 @@ package com.Cartas;
 import java.util.List;
 import java.util.ArrayList;
 public class Hand extends Cards {
-    List <Cards> mano = new ArrayList<>();
+    List <Cards> hand = new ArrayList<>();
 
     public Hand(){
         for (int i=0; i<2; i++){
@@ -10,7 +10,7 @@ public class Hand extends Cards {
             int valorPalo = (int) (Math.random()*4);
 
             if(!ExisteLaCarta(valorCarta, this.palos[valorPalo])){
-                mano.add(new Cards(valorCarta, this.palos[valorPalo]));
+                hand.add(new Cards(valorCarta, this.palos[valorPalo]));
                 cartasEnJuego.add(new Cards(valorCarta, this.palos[valorPalo]));
             }
             else{
@@ -18,22 +18,22 @@ public class Hand extends Cards {
             }
         }
     }
-    public int getValorCarta1 (){
-        return mano.get(0).getValor();
+    public Integer getValorCarta1 (){
+        return hand.get(0).getValor();
     }
-    public int getValorCarta2 (){
-        return mano.get(1).getValor();
+    public Integer getValorCarta2 (){
+        return hand.get(1).getValor();
     }
     public String getPaloCarta1 (){
-        return mano.get(0).getPalo();
+        return hand.get(0).getPalo();
     }
     public String getPaloCarta2 (){
-        return mano.get(1).getPalo();
+        return hand.get(1).getPalo();
     }
     @Override
     public String toString() {
         return "Cartas de la mano: \n" +
-                super.VerificarValor(mano.get(0).getValor()) + " " + mano.get(0).getPalo() + "\n" +
-                super.VerificarValor(mano.get(1).getValor()) + " " + mano.get(1).getPalo() + "\n\n";
+                super.VerificarValor(hand.get(0).getValor()) + " " + hand.get(0).getPalo() + "\n" +
+                super.VerificarValor(hand.get(1).getValor()) + " " + hand.get(1).getPalo() + "\n\n";
     }
 }
