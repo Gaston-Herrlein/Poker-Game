@@ -1,4 +1,6 @@
-package com.Cartas;
+package com.Cards.Class;
+import com.Cards.Interfaces.Deck;
+
 import java.util.ArrayList;
 import java.util.List;
 

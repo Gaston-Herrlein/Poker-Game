@@ -1,8 +1,4 @@
-package com.Jugadores;
-import com.Cartas.Hand;
-import com.Gamers;
-
-import java.util.Scanner;
+package com.Gamers.Class;
 
 public class Gamer extends Gamers {
 

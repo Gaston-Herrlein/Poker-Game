@@ -1,4 +1,6 @@
-package com.Cartas;
+package com.Cards.Class;
+import com.Cards.Class.Cards;
+
 import java.util.List;
 import java.util.ArrayList;
 public class Hand extends Cards {

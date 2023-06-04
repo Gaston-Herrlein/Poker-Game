@@ -1,6 +1,6 @@
-package com;
+package com.Gamers.Interfaces;
 
-import com.Jugadores.Bot;
+import com.Gamers.Class.Bot;
 
 public interface BotsFactory {
     Bot CreateBot (String name);

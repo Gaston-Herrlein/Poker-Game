@@ -1,6 +1,6 @@
-package com;
-import com.Cartas.Hand;
-import com.Jugadores.Game;
+package com.Gamers.Class;
+import com.Cards.Class.Hand;
+import com.ObserverPatron.Observer;
 
 public abstract class Gamers implements Observer {
     protected String name;

@@ -1,12 +1,9 @@
-package com.Jugadores;
-import com.BotsFactory;
-import com.Gamers;
+package com.Gamers.Class;
 
-public abstract class Bot extends Gamers implements BotsFactory {
+public abstract class Bot extends Gamers {
     public Bot(String name){
         super (name);
     }
-
     @Override
     public void Update(){
         //LOGICA PARA ACTUALIZAR ESTADO DE BOTS

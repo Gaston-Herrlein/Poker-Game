@@ -1,5 +1,5 @@
-package com.Cartas;
-import com.Observer;
+package com.Cards.Class;
+import com.ObserverPatron.Observer;
 
 import java.util.List;
 import java.util.ArrayList;

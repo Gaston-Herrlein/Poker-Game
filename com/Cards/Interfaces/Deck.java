@@ -1,4 +1,4 @@
-package com.Cartas;
+package com.Cards.Interfaces;
 
 public interface Deck {
     String[] palos = {"Corazon", "Pica", "Diamante", "Trebol"};
