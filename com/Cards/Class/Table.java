@@ -4,11 +4,15 @@ import com.ObserverPatron.Observer;
 import java.util.List;
 import java.util.ArrayList;
 public class Table extends Cards implements Observer {
-    List <Cards> table = new ArrayList<>();
+    private List <Cards> table = new ArrayList<>();
     static boolean flagFlop=false;
     static boolean flagTurn=false;
     static boolean flagRiver=false;
     public Table(){
+    }
+
+    public List<Cards> getTable() {
+        return table;
     }
 
     public String Flop (){
@@ -24,10 +28,7 @@ public class Table extends Cards implements Observer {
                 i--;
             }
         }
-        return "Cartas mesa en el flop: \n" +
-                super.VerificarValor(table.get(0).getValor()) + " " + table.get(0).getPalo() + "\n" +
-                super.VerificarValor(table.get(1).getValor()) + " " + table.get(1).getPalo() + "\n" +
-                super.VerificarValor(table.get(2).getValor()) + " " + table.get(2).getPalo();
+        return this.toString();
     }
     public String Turn (){
         for (int i=0; i<1; i++){
@@ -42,32 +43,21 @@ public class Table extends Cards implements Observer {
                 i--;
             }
         }
-        return "Cartas mesa en el flop: \n" +
-                super.VerificarValor(table.get(0).getValor()) + " " + table.get(0).getPalo() + "\n" +
-                super.VerificarValor(table.get(1).getValor()) + " " + table.get(1).getPalo() + "\n" +
-                super.VerificarValor(table.get(2).getValor()) + " " + table.get(2).getPalo() + "\n" +
-                super.VerificarValor(table.get(3).getValor()) + " " + table.get(3).getPalo();
+        return this.toString();
     }
-    public String River (){
-        for (int i=0; i<1; i++){
-            int valorCarta = (int) (Math.random()*13+1);
-            int valorPalo = (int) (Math.random()*4);
+    public String River () {
+        for (int i = 0; i < 1; i++) {
+            int valorCarta = (int) (Math.random() * 13 + 1);
+            int valorPalo = (int) (Math.random() * 4);
 
-            if(!ExisteLaCarta(valorCarta, this.palos[valorPalo])){
+            if (!ExisteLaCarta(valorCarta, this.palos[valorPalo])) {
                 table.add(new Cards(valorCarta, this.palos[valorPalo]));
                 cartasEnJuego.add(new Cards(valorCarta, this.palos[valorPalo]));
-            }
-            else{
+            } else {
                 i--;
             }
         }
-        return "Cartas mesa en el flop: \n" +
-                super.VerificarValor(table.get(0).getValor()) + " " + table.get(0).getPalo() + "\n" +
-                super.VerificarValor(table.get(1).getValor()) + " " + table.get(1).getPalo() + "\n" +
-                super.VerificarValor(table.get(2).getValor()) + " " + table.get(2).getPalo() + "\n" +
-                super.VerificarValor(table.get(3).getValor()) + " " + table.get(3).getPalo() + "\n" +
-                super.VerificarValor(table.get(4).getValor()) + " " + table.get(4).getPalo() + "\n" +
-                super.VerificarValor(table.get(5).getValor()) + " " + table.get(5).getPalo();
+        return this.toString();
     }
 
     @Override
@@ -91,6 +81,18 @@ public class Table extends Cards implements Observer {
             flagTurn=false;
             flagRiver=false;
         }
+    }
+
+    @Override
+    public String toString() {
+        String message = "Cartas en mesa:\n";
+        String aux;
+        for (Cards card: getTable()) {
+            aux = message.concat(super.VerificarValor(card.getValor()) + " " + card.getPalo() + "\n");
+            message = aux;
+        }
+
+        return message;
     }
 }
 

@@ -4,7 +4,7 @@ import com.Cards.Class.Cards;
 import java.util.List;
 import java.util.ArrayList;
 public class Hand extends Cards {
-    List <Cards> hand = new ArrayList<>();
+    private List <Cards> hand = new ArrayList<>();
 
     public Hand(){
         for (int i=0; i<2; i++){

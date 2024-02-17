@@ -7,7 +7,6 @@ public class Gamer extends Gamers {
     }
     @Override
     public void Update() {
-
     }
 
     @Override
@@ -15,5 +14,4 @@ public class Gamer extends Gamers {
         return super.name + ", " + "$" + super.token + "\n" +
                 super.hand.toString();
     }
-
 }

@@ -9,22 +9,17 @@ public abstract class Gamers implements Observer {
     protected boolean diller;
     protected boolean ciegaChica;
     protected boolean ciegaGrande;
-    //protected Game state;
+    private final Integer INIT_TOKEN = 1000;
 
     public Gamers(String name) {
         this.name = name;
-        this.token = 10000;
+        this.token = this.INIT_TOKEN;
         this.hand = new Hand();
     }
     public void Strategy (Game state){
-
     }
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Integer getToken() {
@@ -35,14 +30,13 @@ public abstract class Gamers implements Observer {
         this.token = token;
     }
 
-    public Hand getHands() {
+    public Hand getHand() {
         return hand;
     }
 
-    public void setHands(Hand hand) {
+    public void setHand(Hand hand) {
         this.hand = hand;
     }
-
     public boolean isDiller() {
         return diller;
     }
