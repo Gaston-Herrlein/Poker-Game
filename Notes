@@ -1,0 +1,102 @@
+La aplicacion utiliza el patron Observer para notificar a todos los jugadores (bots incluidos) los cambios que se realizaron en el juego.
+
+Patron Observer:
+    Observer  => Jugadores
+    Observable => clase GAME. Esta contiene todos los atributos necesarios para guardar el estado del juego, y los metodos pertinentes al cambio del mismo.
+
+
+Ademas utiliza el patron factory para crear bots.
+
+Patron Factory:
+    Factory => Implementacion para que instancia las distindas factorias segun la dificultad
+        EasyFactory => Crea dos "EasyBot" y un "MediumBot"
+        MediumFactory =>
+        HardFactory =>
+
+    Bot => Clase abstracta de la que heredan "EasyBot", "MediumBot" y "HardBot"
+        EasyBot => Clase concreta que tiene una "estrategia Aleatoria"*
+        MediumBot => Clase concreta que tiene una "estrategia basada en la mano"*.
+        HardBot => Clase concreta que tiene una "estrategia de probabilidades"*.
+
+
+        *Estrategia aleatoria:  Este bot solamente apostara 1 vez cada X rondas, sin tener nocion de las cartas en juego o en la mano.
+                                    Si no hay apuesta y le corresponde aumenta, auménta.
+                                    Si no hay apuesta y no le corresponde apostar, dada la logica anteriormente dicha, el bot pasa.
+                                    Si hay apuesta y le corresponde aumentar, iguala.
+                                    Si hay apuesta y no le corresponde aumentar:
+                                        En init iguala siempre.
+                                        En flop y river iguala cada (X/2) rondas
+                                        En turn iguala cada x rondas.
+
+
+        *Estrategia basada en la mano:  Este bot tendra nocion solamente de las cartas en su mano, apostando solamente cuando en su mano tenga 2 cartas consecutivas, 2 cartas del mismo palo o dos cartas del mismo valor.
+                                            Dos cartas del mismo palo
+                                                En init
+                                                    Si no hay apuesta
+                                                    Si hay apuesta mayor
+                                                En flop
+                                                    Si no hay apuesta
+                                                    Si hay apuesta mayor
+                                                En turn
+                                                    Si no hay apuesta
+                                                    Si hay apuesta mayor
+                                                En river
+                                                    Si no hay apuesta
+                                                    Si hay apuesta mayor
+                                            Dos cartas del mismo valor
+                                                En init
+                                                    Si no hay apuesta
+                                                    Si hay apuesta mayor
+                                                En flop
+                                                    Si no hay apuesta
+                                                    Si hay apuesta mayor
+                                                En turn
+                                                    Si no hay apuesta
+                                                    Si hay apuesta mayor
+                                                En river
+                                                    Si no hay apuesta
+                                                    Si hay apuesta mayor
+                                            Dos cartas consecutivas
+                                                En init
+                                                    Si no hay apuesta
+                                                    Si hay apuesta mayor
+                                                En flop
+                                                    Si no hay apuesta
+                                                    Si hay apuesta mayor
+                                                En turn
+                                                    Si no hay apuesta
+                                                    Si hay apuesta mayor
+                                                En river
+                                                    Si no hay apuesta
+                                                    Si hay apuesta mayor
+                                            Dos cartas consecutivas del mismo palo
+                                                En init
+                                                    Si no hay apuesta
+                                                    Si hay apuesta mayor
+                                                En flop
+                                                    Si no hay apuesta
+                                                    Si hay apuesta mayor
+                                                En turn
+                                                    Si no hay apuesta
+                                                    Si hay apuesta mayor
+                                                En river
+                                                    Si no hay apuesta
+                                                    Si hay apuesta mayor
+                                            Otro caso
+                                                En init
+                                                    Si no hay apuesta -> Pasa
+                                                    Si hay apuesta mayor -> Se retira
+                                                En flop
+                                                    Si no hay apuesta -> Pasa
+                                                    Si hay apuesta mayor -> Se retira
+                                                En turn
+                                                    Si no hay apuesta -> Pasa
+                                                    Si hay apuesta mayor -> Se retira
+                                                En river
+                                                    Si no hay apuesta -> Pasa
+                                                    Si hay apuesta mayor -> Se retira
+
+
+
+        *Estrategia de probabilidades:  Este bot tendra la logica mas compleja. Este bot tendra nocion de las cartas en la mano y de las cartas en la mesa, calculando en cada ronda (init, flop, turn y river) la probabilidad de ganar la apuesta con sus cartas. En base a esa probabilidad realozara la apuesta.
+                                            FALTA DEFINIR LOGICA. Ver https://www.juego-legal-espana.es/probabilidades-poker.php

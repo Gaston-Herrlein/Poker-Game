@@ -6,5 +6,5 @@ public class Main {
         System.out.println(table.Flop());
         System.out.println(table.Turn());
         System.out.println(table.River());
-    }   
+    }
 }
